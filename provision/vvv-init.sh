@@ -160,8 +160,8 @@ install_wp() {
   DELETE_DEFAULT_THEMES=$(get_config_value 'delete_default_themes' '')
   if [ ! -z "${DELETE_DEFAULT_THEMES}" ]; then
     echo " * Deleting the default themes"
-    noroot wp theme delete twentytwelve
     noroot wp theme delete twentynineteen
+    noroot wp theme delete twentyseventeen
     noroot wp theme delete twentytwenty
   fi
 

@@ -232,7 +232,8 @@ copy_nginx_configs
 setup_wp_config_constants
 install_plugins
 install_themes
-delete_theme
 active_theme
+delete_theme
+
 
 echo " * Site Template provisioner script completed for ${VVV_SITE_NAME}"

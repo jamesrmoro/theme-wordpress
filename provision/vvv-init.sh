@@ -183,15 +183,15 @@ update_wp() {
   fi
 }
 
+active_theme() {
+
+  noroot wp theme activate wordpress-theme-setup
+}
+
 delete_theme() {
   noroot wp theme delete twentynineteen
   noroot wp theme delete twentyseventeen
   noroot wp theme delete twentytwenty
-}
-
-active_theme() {
-
-  noroot wp theme activate wordpress-theme-setup
 }
 
 setup_database

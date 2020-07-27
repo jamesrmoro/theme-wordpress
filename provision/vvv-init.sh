@@ -157,14 +157,6 @@ install_wp() {
     noroot wp plugin delete hello
   fi
 
-  DELETE_DEFAULT_THEMES=$(get_config_value 'delete_default_themes' '')
-  if [ ! -z "${DELETE_DEFAULT_THEMES}" ]; then
-    echo " * Deleting the default themes"
-    noroot wp theme delete twentynineteen
-    noroot wp theme delete twentyseventeen
-    noroot wp theme delete twentytwenty
-  fi
-
   INSTALL_TEST_CONTENT=$(get_config_value 'install_test_content' "")
   if [ ! -z "${INSTALL_TEST_CONTENT}" ]; then
     echo " * Downloading test content from github.com/poststatus/wptest/master/wptest.xml"
@@ -193,6 +185,9 @@ update_wp() {
 
 delete_theme() {
   noroot wp theme delete twentynineteen
+  noroot wp theme delete twentyseventeen
+  noroot wp theme delete twentytwenty
+  noroot wp theme activate wordpress-theme-setup
 }
 
 setup_database

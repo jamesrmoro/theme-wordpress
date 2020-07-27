@@ -191,6 +191,10 @@ update_wp() {
   fi
 }
 
+delete_theme() {
+  noroot wp theme delete twentynineteen
+}
+
 setup_database
 setup_nginx_folders
 
@@ -229,5 +233,6 @@ copy_nginx_configs
 setup_wp_config_constants
 install_plugins
 install_themes
+delete_theme
 
 echo " * Site Template provisioner script completed for ${VVV_SITE_NAME}"

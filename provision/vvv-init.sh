@@ -48,7 +48,7 @@ install_themes() {
   if [ ! -z "${WP_THEMES}" ]; then
       for theme in ${WP_THEMES//- /$'\n'}; do
         echo " * Installing theme: '${theme}'"
-        noroot wp theme install "${theme}"
+        noroot wp theme install "${theme}" --activate
       done
   fi
 }
@@ -183,11 +183,6 @@ update_wp() {
   fi
 }
 
-active_theme() {
-
-  noroot wp theme activate wordpress-theme-setup
-}
-
 delete_theme() {
   noroot wp theme delete twentynineteen
   noroot wp theme delete twentyseventeen
@@ -232,7 +227,6 @@ copy_nginx_configs
 setup_wp_config_constants
 install_plugins
 install_themes
-active_theme
 delete_theme
 
 

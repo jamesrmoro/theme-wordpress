@@ -187,6 +187,10 @@ delete_theme() {
   noroot wp theme delete twentynineteen
   noroot wp theme delete twentyseventeen
   noroot wp theme delete twentytwenty
+}
+
+active_theme() {
+
   noroot wp theme activate wordpress-theme-setup
 }
 
@@ -229,5 +233,6 @@ setup_wp_config_constants
 install_plugins
 install_themes
 delete_theme
+active_theme
 
 echo " * Site Template provisioner script completed for ${VVV_SITE_NAME}"
